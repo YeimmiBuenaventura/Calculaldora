@@ -1,72 +1,84 @@
+/*Etiqueta universal*/
 * {
-    font-family: 'Fraunces', serif;
-    color: #fff;
+    font-family: 'Finger Paint', cursive; /*Tipo de letra*/
+    color: #fff; /*Color de letra*/
 }
 
 body {
-    margin: 0;
-    background-color: #224870;
+    margin: 0; /*Quita la margen que el body ya tiene por defecto*/
+    background-color: #B695C0; /*Color de fondo del cuerpo*/
 }
-
+/*Clase adjudicada para activar el modo oscuro cuando el usuario lo solicite*/
+.dark{
+    background-color: #000;
+}
+/*Contenedor calculadora*/
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     height: 100vh;
 }
-
+/*Distribución botones de la calculadora*/
 .calculadora {
-    display: grid;
-    grid-template-columns: repeat(4, 75px);
-    grid-template-rows: 160px repeat(5, 75px);
-    background-color: #00916e;
-    padding: 15px;
-    border-radius: 32px;
-    box-shadow: 15px 10px 0px 5px #00000033;
+    display: grid; /*Indicando tipo de display a aplicar*/
+    grid-template-columns: repeat( 4, 1fr); /*Indica la cantidad de columnas que tendra la calculadora*/
+    grid-template-columns: repeat(autofill, minmax(60px, 1fr)); /*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas*/
+    grid-template-columns: repeat(autofit, minmax(60px, 1fr)); /* La propiedad autofit ajusta el grid,ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas */
+    grid-template-rows:  repeat(6, 1fr); /*Indica la cantidad de filas que tendra la calculadora*/
+    grid-template-rows: repeat(autofill, minmax(60px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
+    grid-template-rows: repeat(autofit, minmax(60px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
+    row-gap: 10px; /*Da el espaciado entre cada boton "Filas"*/
+    column-gap: 10px; /*Da el espaciado entre cada boton "Columnas"*/
+    width: 70%; /*Indica el ancho que va a ocupar la calculadora en el espacio*/
+    height: 90%; /*Indica el alto que va a ocupar la calculadora en el espacio*/
+    background-color: #800080; /*Color de fondo de la calculadora*/
+    padding: 30px; /* Espacio entre botones y borde de la calculadora(Container)*/
+    border-radius: 30px; /*Brinda borde circular a la calculadora*/
+    box-shadow: 15px 10px 10px 5px #00000033; /*Brinda sombra de la calculadora siendo el primer valor la sombra hacia la derecha, el segundo la sombra hacia abajo, el tercer que tan fuerte se ve la sombra, y el cuarto que tan lejana estara la sombra;el color tiene al final de los 6 números la, opacidad del tono.*/
 }
-
+/*Estilos generales para los botones*/
 button {
-    cursor: pointer;
-    margin: 5px;
-    padding: 0;
-    border-radius: 32px;
-    font-size: 1.5em;
-    border: none;
-    background-color: #00916e;
-    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+    cursor: pointer;/*Permite cambiar el estilo del cursor cuando pasa sobre un botón*/
+    border-radius: 20px; /*Da el borde de los botones*/
+    font-size: 3em; /*Tamaño de los números*/
+    border: none; /*Quita el borde de los botones*/
+    background-color: #8000FF; /*Color de fondo de la calculadora*/
+    box-shadow: 5px 5px 10px -3px #00000050, -5px -5px 15px 3px #572364; /*Brinda sombra de la boton siendo el primer valor la sombra hacia la derecha, el segundo la sombra hacia abajo, el tercer que tan fuerte se ve la sombra, y el cuarto que tan lejana estara la sombra;el color tiene al final de los 6 números la, opacidad del tono.*/
 }
-
+/*Se aplica la pseudoclase active para cambiar el color del boton cuando se de click*/
 button:active {
-    background-color: #006f54;
+    background-color: #8A36D2;/*Color que tomara el botón al hacer click*/
 }
-
+/*Se aplica la pseudoclase focus para quitar el borde que el boton tiene por defecto al señalarlo*/
 button:focus {
     outline: none;
 }
-
+/*Esta clse se aplica para que el boton C ocupe dos espacios de la grid*/
 .col-2 {
     grid-column: span 2;
 }
-
+/*Estos son los estilos que se le aplican a la sección del display*/
 .display {
-    grid-column: 1 / -1;
-    padding: 16px;
-    display: flex;
-    margin: 10px 10px 20px;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: #363636;
-    border-radius: 32px;
-    text-align: right;
-    justify-content: space-between;
-    word-break: break-all;
-    box-shadow: 0px 0px 0px 10px #00000033;
+    grid-column: span 4; /*Indica la cantidad de espacios que ocupara el display*/
+    padding: 15px; /*Indica la distancia que tendran los números ingresados del borde del display*/
+    display: flex; /*Se indica el tipo de display que se aplicara a este container*/
+    margin: 15px 10px; /*Indica la distancia que tendra el display de los diversos bordes*/
+    flex-direction: column; /*Indica la disposicion que tendran los numeros que ingrese el usuario*/
+    align-items: flex-end; /*Indica el espacio en el cual estaran ubicados los números*/
+    background-color: #363636; /*Brinda el color del fondo del display*/
+    border-radius: 20px; /*Indica el radio del display en sus esquinas*/
+    text-align: right; /*Ubica los números hacia la parte derecha del container*/
+    justify-content: space-between; /*Brinda la separacion entre el valor actual y el anterior*/
+    word-break: break-all; /*Permite un salto de linea evitando que el contenido se desborde del espacio*/
+    box-shadow: 0px 0px 0px 10px #00000033; /*Se indica el color de la sombra, opacidad del mismo y distancia*/
 }
-
+/*Id que nos permite asignarle un tamaño especifico a la variable indicada*/
 #valor-actual {
-    font-size: 1.5em;
-}
-
-#valor-anterior {
     font-size: 2em;
+}
+/*Id que nos permite asignarle un tamaño especifico a la variable indicada*/
+#valor-anterior {
+    font-size: 2.5em;
 }
