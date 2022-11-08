@@ -24,11 +24,11 @@ body {
 .calculadora {
     display: grid; /*Indicando tipo de display a aplicar*/
     grid-template-columns: repeat( 4, 1fr); /*Indica la cantidad de columnas que tendra la calculadora*/
-    grid-template-columns: repeat(autofill, minmax(60px, 1fr)); /*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas*/
-    grid-template-columns: repeat(autofit, minmax(60px, 1fr)); /* La propiedad autofit ajusta el grid,ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas */
+    grid-template-columns: repeat(autofill, minmax(50px, 1fr)); /*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas*/
+    grid-template-columns: repeat(autofit, minmax(50px, 1fr)); /* La propiedad autofit ajusta el grid,ademas se le esta indicando el valor minimo que pueden llegar a medir las columnas */
     grid-template-rows:  repeat(6, 1fr); /*Indica la cantidad de filas que tendra la calculadora*/
-    grid-template-rows: repeat(autofill, minmax(60px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
-    grid-template-rows: repeat(autofit, minmax(60px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
+    grid-template-rows: repeat(autofill, minmax(50px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
+    grid-template-rows: repeat(autofit, minmax(50px, 1fr));/*La propiedad autofill rellena la grid al espacio, ademas se le esta indicando el valor minimo que pueden llegar a medir las filas*/
     row-gap: 10px; /*Da el espaciado entre cada boton "Filas"*/
     column-gap: 10px; /*Da el espaciado entre cada boton "Columnas"*/
     width: 70%; /*Indica el ancho que va a ocupar la calculadora en el espacio*/
@@ -42,7 +42,7 @@ body {
 button {
     cursor: pointer;/*Permite cambiar el estilo del cursor cuando pasa sobre un botón*/
     border-radius: 20px; /*Da el borde de los botones*/
-    font-size: 3em; /*Tamaño de los números*/
+    font-size: 2em; /*Tamaño de los números*/
     border: none; /*Quita el borde de los botones*/
     background-color: #8000FF; /*Color de fondo de la calculadora*/
     box-shadow: 5px 5px 10px -3px #00000050, -5px -5px 15px 3px #572364; /*Brinda sombra de la boton siendo el primer valor la sombra hacia la derecha, el segundo la sombra hacia abajo, el tercer que tan fuerte se ve la sombra, y el cuarto que tan lejana estara la sombra;el color tiene al final de los 6 números la, opacidad del tono.*/
